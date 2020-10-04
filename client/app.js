@@ -1,4 +1,4 @@
-function getBathValue() {
+function getBathroomNumber() {
     var uiBathrooms = document.getElementsByName("uiBathrooms");
     for (var i in uiBathrooms) {
         if (uiBathrooms[i].checked) {
@@ -8,10 +8,10 @@ function getBathValue() {
     return -1; // Invalid Value
 }
 
-function getBHKValue() {
-    var uiBHK = document.getElementsByName("uiBedroom");
-    for (var i in uiBHK) {
-        if (uiBHK[i].checked) {
+function getBedroomNumber() {
+    var uiBedroom = document.getElementsByName("uiBedroom");
+    for (var i in uiBedroom) {
+        if (uiBedroom[i].checked) {
             return parseInt(i) + 1;
         }
     }
@@ -21,8 +21,8 @@ function getBHKValue() {
 function onClickedEstimatePrice() {
     console.log("Estimate price button clicked");
     var sqft = document.getElementById("uiSqft");
-    var bedroom = getBHKValue();
-    var bathrooms = getBathValue();
+    var bedroom = getBedroomNumber();
+    var bathrooms = getBathroomNumber();
     var location = document.getElementById("uiLocations");
     var estPrice = document.getElementById("uiEstimatedPrice");
 
